@@ -1,4 +1,10 @@
 #!/usr/bin/env ruby
+
+# https://medium.com/@aayushsharda/why-to-use-load-path-in-ruby-ce971bc1d864
+libx = File.expand_path("../../lib", __FILE__)
+$LOAD_PATH.unshift(libx) unless $LOAD_PATH.include?(libx)
+puts $LOAD_PATH
+
 Signal.trap("INT") { exit 1 }
 
 $stdout.sync = true
